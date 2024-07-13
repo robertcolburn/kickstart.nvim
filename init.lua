@@ -505,7 +505,7 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
-        csharp_ls = {},
+        omnisharp = {},
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
