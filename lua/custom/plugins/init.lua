@@ -25,5 +25,9 @@ return {
       -- …etc.
     },
   },
-  { 'akinsho/toggleterm.nvim', version = '*', opts = { open_mapping = [[<c-\>]], size = 7 } },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    opts = { open_mapping = [[<c-\>]], size = 14 },
+  },
 }
