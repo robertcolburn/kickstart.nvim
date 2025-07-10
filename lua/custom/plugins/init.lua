@@ -4,12 +4,18 @@
 -- See the kickstart.nvim README for more information
 return {
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
+    'OXY2DEV/markview.nvim',
+    lazy = false,
+    dependencies = {
+      'saghen/blink.cmp',
+    },
+    opts = {
+      preview = {
+        icon_provider = 'devicons',
+      },
+    },
+    -- For `nvim-treesitter` users.
+    priority = 49,
   },
   {
     'romgrk/barbar.nvim',
