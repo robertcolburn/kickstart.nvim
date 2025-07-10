@@ -1,6 +1,5 @@
 if vim.g.vscode then
 else
-  --vim.opt.guicursor = 'a:ver30-blinkon150'
   vim.opt.termguicolors = true
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
