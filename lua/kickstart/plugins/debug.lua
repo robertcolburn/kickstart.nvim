@@ -89,6 +89,33 @@ return {
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     { '<F7>', function() require('dapui').toggle() end, desc = 'Debug: See last session result.' },
   },
+  opts = function()
+    local dap = require 'dap'
+    if not dap.adapters['codelldb'] then
+      require('dap').adapters['codelldb'] = {
+        type = 'server',
+        host = 'localhost',
+        port = '${port}',
+        executable = {
+          command = 'codelldb',
+          args = {
+            '--port',
+            '${port}',
+          },
+        },
+      }
+    end
+    dap.configurations.cpp = {
+      {
+        name = 'Launch File',
+        type = 'codelldb',
+        request = 'launch',
+        program = '${command:pickFile}',
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+      },
+    }
+  end,
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
