@@ -93,16 +93,8 @@ return {
     local dap = require 'dap'
     if not dap.adapters['codelldb'] then
       require('dap').adapters['codelldb'] = {
-        type = 'server',
-        host = 'localhost',
-        port = '${port}',
-        executable = {
-          command = 'codelldb',
-          args = {
-            '--port',
-            '${port}',
-          },
-        },
+        type = 'executable',
+        command = 'codelldb',
       }
     end
     dap.configurations.cpp = {
