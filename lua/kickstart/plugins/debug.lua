@@ -88,8 +88,10 @@ return {
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     { '<F7>', function() require('dapui').toggle() end, desc = 'Debug: See last session result.' },
   },
-  opts = function()
+  config = function()
     local dap = require 'dap'
+    local dapui = require 'dapui'
+
     if not dap.adapters['codelldb'] then
       require('dap').adapters['codelldb'] = {
         type = 'executable',
@@ -106,11 +108,6 @@ return {
         stopOnEntry = false,
       },
     }
-  end,
-  config = function()
-    local dap = require 'dap'
-    local dapui = require 'dapui'
-
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     ---@diagnostic disable-next-line: missing-fields
