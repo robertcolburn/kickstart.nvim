@@ -737,7 +737,6 @@ require('lazy').setup({
               clangdFileStatus = true,
             },
           },
-          roslyn = {},
           basedpyright = {},
           -- gopls = {},
           -- pyright = {},
@@ -788,7 +787,6 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers.mason or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'csharpier',
         'codelldb',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -847,7 +845,6 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        cs = { 'csharpier' },
         cpp = { 'clang_format' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
@@ -856,10 +853,6 @@ require('lazy').setup({
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
       formatters = {
-        csharpier = {
-          command = 'csharpier',
-          args = { 'format' },
-        },
         clang_format = {
           args = { '--style=file', '--fallback-style=Microsoft' },
         },
