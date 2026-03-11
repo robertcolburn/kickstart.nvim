@@ -17,8 +17,6 @@ return {
         icon_provider = 'devicons',
       },
     },
-    -- For `nvim-treesitter` users.
-    priority = 49,
   },
   {
     'romgrk/barbar.nvim',
@@ -103,3 +101,4 @@ return {
   },
   { 'Civitasv/cmake-tools.nvim', opts = {} },
 }
+
