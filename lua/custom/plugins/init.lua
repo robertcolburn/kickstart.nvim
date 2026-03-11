@@ -95,4 +95,13 @@ return {
       'nvim-treesitter/nvim-treesitter',
     },
   },
+  {
+    {
+      'stevearc/overseer.nvim',
+      ---@module 'overseer'
+      ---@type overseer.SetupOpts
+      opts = {},
+    },
+  },
+  { 'Civitasv/cmake-tools.nvim', opts = {} },
 }
