@@ -596,42 +596,42 @@ require('lazy').setup({
       --  See `:help lsp-config` for information about keys and how to configure
       ---@type table<string, vim.lsp.Config>
       local servers = {
-         clangd = {
+        clangd = {
           keys = {
-              { '<leader>gh', '<cmd>LspClangdSwitchSourceHeader<cr>', desc = 'Switch Source/Header (C/C++)' },
-            },
-            root_markers = {
-              'compile_commands.json',
-              'compile_flags.txt',
-              'configure.ac', -- AutoTools
-              'Makefile',
-              'configure.ac',
-              'configure.in',
-              'config.h.in',
-              'meson.build',
-              'meson_options.txt',
-              'build.ninja',
-              '.git',
-            },
-            capabilities = {
-              offsetEncoding = { 'utf-16' },
-            },
-            cmd = {
-              'clangd',
-              '--background-index',
-              '--clang-tidy',
-              '--header-insertion=iwyu',
-              '--completion-style=detailed',
-              '--fallback-style=Microsoft',
-            },
-            init_options = {
-              usePlaceholders = true,
-              completeUnimported = true,
-              clangdFileStatus = true,
-            },
-         },
-          basedpyright = {},
-          neocmake = {},
+            { '<leader>gh', '<cmd>LspClangdSwitchSourceHeader<cr>', desc = 'Switch Source/Header (C/C++)' },
+          },
+          root_markers = {
+            'compile_commands.json',
+            'compile_flags.txt',
+            'configure.ac', -- AutoTools
+            'Makefile',
+            'configure.ac',
+            'configure.in',
+            'config.h.in',
+            'meson.build',
+            'meson_options.txt',
+            'build.ninja',
+            '.git',
+          },
+          capabilities = {
+            offsetEncoding = { 'utf-16' },
+          },
+          cmd = {
+            'clangd',
+            '--background-index',
+            '--clang-tidy',
+            '--header-insertion=iwyu',
+            '--completion-style=detailed',
+            '--fallback-style=Microsoft',
+          },
+          init_options = {
+            usePlaceholders = true,
+            completeUnimported = true,
+            clangdFileStatus = true,
+          },
+        },
+        basedpyright = {},
+        neocmake = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -670,12 +670,12 @@ require('lazy').setup({
           end,
           settings = {
             Lua = {},
-               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-                -- diagnostics = { disable = { 'missing-fields' } },
-              },
-            },
-          }
-        
+            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            -- diagnostics = { disable = { 'missing-fields' } },
+          },
+        },
+      }
+
       -- Ensure the servers and tools above are installed
       --
       -- To check the current status of installed tools and/or manually install

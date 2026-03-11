@@ -31,12 +31,10 @@ return {
     local dap = require 'dap'
     local dapui = require 'dapui'
 
-    if not dap.adapters['codelldb'] then
-      require('dap').adapters['codelldb'] = {
-        type = 'executable',
-        command = 'codelldb',
-      }
-    end
+    if not dap.adapters['codelldb'] then require('dap').adapters['codelldb'] = {
+      type = 'executable',
+      command = 'codelldb',
+    } end
     dap.configurations.cpp = {
       {
         name = 'Launch File',
