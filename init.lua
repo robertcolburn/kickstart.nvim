@@ -738,6 +738,7 @@ require('lazy').setup({
             },
           },
           basedpyright = {},
+          neocmake = {},
           -- gopls = {},
           -- pyright = {},
           -- rust_analyzer = {},
