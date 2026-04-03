@@ -632,6 +632,7 @@ require('lazy').setup({
         },
         basedpyright = {},
         neocmake = {},
+        roslyn = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -687,6 +688,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         -- You can add other tools here that you want Mason to install
         'codelldb',
+        'netcoredbg',
       })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
